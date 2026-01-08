@@ -1,6 +1,6 @@
-import nodemailer from "nodemailer";
+const nodemailer = require("nodemailer");
 
-const { email, name } = JSON.parse(process.env.PAYLOAD);
+const payload = JSON.parse(process.env.PAYLOAD);
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -10,13 +10,13 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-await transporter.sendMail({
+transporter.sendMail({
   from: `"My Team" <${process.env.MAIL_FROM}>`,
-  to: email,
+  to: payload.email,
   subject: "Thanks for your response!",
   html: `
-    <p>Hi ${name},</p>
+    <p>Hi ${payload.name},</p>
     <p>Thanks for filling our form.</p>
-    <p>This is just a test to see if it works well.</p>
+    <p>This is just a test email.</p>
   `
 });

@@ -13,12 +13,40 @@ const transporter = nodemailer.createTransport({
 });
 
 transporter.sendMail({
-  from: `"Form Team" <${process.env.MAIL_FROM}>`,
+  from: `"LIBAzaar Team" <${process.env.MAIL_FROM}>`,
   to: payload.email,
-  subject: "Thanks for your response!",
+  subject: "LIBAzaar Event Registration Confirmation",
   html: `
-    <p>Hi ${payload.name},</p>
-    <p>This email is sent from our college Outlook account.</p>
-    <p>Regards,<br/>Team</p>
+    <p>Greetings,</p>
+
+    <p>
+      Thank you for your registration in <b>LIBAzaar ’26</b>! 
+      The event date is <b>1st February 2026 (Sunday)</b>.
+      If you would like to know more about LIBAzaar and events, do visit:
+      <br/>
+      <a href="https://libazaar.liba.edu/index.html">
+        https://libazaar.liba.edu/index.html
+      </a>
+    </p>
+
+    <p>
+      <b>Name of the Team:</b> ${payload.teamName}<br/>
+      <b>Event Name:</b> Fashion Show<br/>
+      <b>Amount Paid:</b> Rs. 1000/-<br/>
+      <b>Registration Status:</b> Confirm
+    </p>
+
+    <p>
+      In case of queries, contact the number given below:
+      <br/>
+      <b>Shreyaa J:</b> +91 98401 50554<br/>
+      <b>Swetha R:</b> +91 9952002266
+    </p>
+
+    <p>
+      Regards,<br/>
+      <b>MARKIT</b><br/>
+      Marketing Club of LIBA
+    </p>
   `
 });

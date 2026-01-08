@@ -3,7 +3,9 @@ const nodemailer = require("nodemailer");
 const payload = JSON.parse(process.env.PAYLOAD);
 
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp.office365.com",
+  port: 587,
+  secure: false,
   auth: {
     user: process.env.MAIL_FROM,
     pass: process.env.MAIL_PASSWORD
@@ -11,12 +13,12 @@ const transporter = nodemailer.createTransport({
 });
 
 transporter.sendMail({
-  from: `"My Team" <${process.env.MAIL_FROM}>`,
+  from: `"Form Team" <${process.env.MAIL_FROM}>`,
   to: payload.email,
   subject: "Thanks for your response!",
   html: `
     <p>Hi ${payload.name},</p>
-    <p>Thanks for filling our form.</p>
-    <p>This is just a test email.</p>
+    <p>This email is sent from our college Outlook account.</p>
+    <p>Regards,<br/>Team</p>
   `
 });

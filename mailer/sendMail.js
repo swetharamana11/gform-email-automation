@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 });
 
 transporter.sendMail({
-  from: `"LIBAzaar Team" <${process.env.MAIL_FROM}>`,
+  from: `"LIBAzaar" <${process.env.MAIL_FROM}>`,
   to: payload.email,
   subject: "LIBAzaar Event Registration Confirmation",
   html: `

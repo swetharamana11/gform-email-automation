@@ -113,7 +113,7 @@ switch (payload.eventType) {
     bodyContent = `
       Participant Name: ${payload.name}
       Event Name: Music Solo
-      Amount Paid: Rs. =200/-
+      Amount Paid: Rs. 200/-
       Registration Status: Confirm
     `;
     break;

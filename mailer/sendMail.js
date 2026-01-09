@@ -6,7 +6,7 @@ const payload = JSON.parse(process.env.PAYLOAD);
    MAIL CONFIG (COMMON)
    ========================= */
 
-const SUBJECT = "LIBAzaar Event Registration";
+const SUBJECT = "LIBAzaar Event Registration Confirmation";
 const FROM_NAME = "LIBAzaar";
 
 const transporter = nodemailer.createTransport({

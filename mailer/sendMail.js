@@ -56,16 +56,6 @@ switch (payload.eventType) {
     `;
     break;
 
-  case "adapt_tune":
-    eventName = "Adapt Tune";
-    bodyContent = `
-      Name of the Team: ${payload.teamName}
-      Event Name: Adapt Tune
-      Amount Paid: Rs. 200/-
-      Registration Status: Confirm
-    `;
-    break;
-
     case "music_band":
     eventName = "Music Band";
     bodyContent = `
@@ -177,6 +167,17 @@ switch (payload.eventType) {
       Registration Status: Confirm
     `;
     break;
+
+   case "adapt_tune":
+  eventName = "Adapt Tune";
+  bodyContent = `
+    Participant Name: ${payload.name}
+    Event Name: Adapt Tune
+    Amount Paid: Rs. 200/-
+    Registration Status: Confirm
+  `;
+  break;
+
 
   /* -------- DEFAULT FALLBACK -------- */
 
